@@ -1,0 +1,10 @@
+.img-thumb {
+	max-height: 180px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.img-thumb img {
+	width: 100%;
+	height: 100%;
+}
