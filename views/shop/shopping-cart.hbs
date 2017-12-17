@@ -1,0 +1,48 @@
+<h3 class="mb-5">Shopping Cart</h3>
+{{#if product}}
+<div class="row justify-content-center">
+	<div class="col-md-8">
+		<table class="table table-sm">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col" class="text-center">Item</th>
+					<th scope="col" class="text-center">Quantity</th>
+					<th scope="col" class="text-center">Price</th>
+					<th scope="col" class="text-center">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each product}}
+				<tr>
+					<td class="text-center">{{item.title}}</td>
+					<td class="text-center">{{qty}}</td>
+					<td class="text-center">Rs.{{price}}</td>
+					<td class="text-center">
+						<a href="#" class="btn btn-sm btn-primary">Add</a>
+						<a href="#" class="btn btn-sm btn-danger">Remove</a>
+					</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+<hr>
+<div class="row justify-content-center">
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-6">
+				<strong>Total: </strong>Rs.{{totalPrice}}
+			</div>
+			<div class="col-md-6 text-right">
+				<a href="/checkout" class="btn btn-success">Checkout</a>
+			</div>
+		</div>
+	</div>
+</div>
+{{#each product}}
+{{!-- {{item.title}} - {{qty}} - {{price}} <br> --}}
+{{/each}}
+{{else}}
+<h2>No Items Found</h2>
+{{/if}}
